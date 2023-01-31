@@ -1,0 +1,12 @@
+<h1>Hello tom</h1>
+
+<a href="./servlet">Servlet1</a>
+
+<button (click)="getEntities()">Get Entities</button>
+
+{{entityList[0].name}}
+<ul>
+    <li *ngFor="let ent of entityList">
+        Name: {{ent.name}}, age: {{ent.description}}, width: {{ent.ImgUrl}}
+    </li>
+</ul>
