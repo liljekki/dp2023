@@ -5,6 +5,7 @@
     transform: translate(-50%, -50%);
     background-color: gray;
     margin-top: 50px;
+    color: white;
 }
 ul{
     padding-left: 6;
@@ -20,19 +21,23 @@ li {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%); */
-    background-color: bisque;
+    background-color: rgb(247, 239, 228);
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
+    align-items: center;
+    padding: 25px;
     
-    /* .name{
-        
+    .name{
+        align-items: center;
+        font-size: 1.2rem;
     }
     
 
     .descr {
-        
-    } */
+        align-items: center;
+        font-size: 1.2rem;
+    }
 }
 }
