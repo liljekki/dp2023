@@ -1,0 +1,7 @@
+<button class="button" (click)="getEntities()">Get Entities</button>
+
+<ul>
+    <li *ngFor="let ent of entityList">
+        {{ent.name}} {{ent.description}} {{ent.ImgUrl}}
+    </li>
+</ul>
