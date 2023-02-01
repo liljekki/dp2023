@@ -1,7 +1,9 @@
-<button class="button" (click)="getEntities()">Get Entities</button>
+<button class="button" (click)="getEntities()">Get Product</button>
 
 <ul>
     <li *ngFor="let ent of entityList">
-        {{ent.name}} {{ent.description}} {{ent.ImgUrl}}
+        <div class="name">{{ent.name}}</div>
+        <div class="img">{{ent.ImgUrl}}</div>
+        <div class="descr">{{ent.description}}</div>
     </li>
 </ul>
