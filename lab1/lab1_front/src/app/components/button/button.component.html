@@ -3,7 +3,8 @@
 <ul>
     <li *ngFor="let ent of entityList">
         <div class="name">Name: {{ent.name}}</div>
-        <div class="img">{{ent.ImgUrl}}</div>
-        <div class="descr">Descriptiom: {{ent.description}}</div>
+        <img [src]="ent.ImgUrl" alt="">
+        <div class="descr">Description: {{ent.description}}</div>
+       
     </li>
 </ul>

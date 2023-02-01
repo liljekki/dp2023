@@ -8,33 +8,22 @@
     color: white;
 }
 ul{
-    padding-left: 6;
-    padding-right: 6;
-    padding-top: 15;
-    padding-bottom: 4;
-    display: flex;
-    margin-bottom: 2;
-    
+    display: flex; 
 
 li {
-    /* position: absolute;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%); */
-    background-color: rgb(247, 239, 228);
+    background-color:rgb(211, 171, 119);
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
     align-items: center;
-    padding: 25px;
+    padding: 25px 75px;
     
     .name{
         align-items: center;
         font-size: 1.2rem;
     }
     
-
     .descr {
         align-items: center;
         font-size: 1.2rem;

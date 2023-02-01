@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 public class JsonServlen extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        MyEntity entity = new MyEntity("kraken", "good sleeping bag for hiking", "urlToImg");
+        MyEntity entity = new MyEntity("kraken", "good sleeping bag for hiking", "assets/img/spalnik.png");
         String someJson = new Gson().toJson(entity);
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
