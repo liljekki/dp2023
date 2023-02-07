@@ -1,0 +1,55 @@
+.edit-form {
+    margin-left: 25%;
+    margin-top: 75px;
+}
+
+.small_fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.images{
+    padding-left: 60%;
+}
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+.input:focus {
+    outline: none;
+}
+
+
+
+.Send {
+    margin-left: 46%;
+    width: 150px;
+    height: 50px;
+    border-radius: 3px;
+    border: 3px solid #fff;
+    background-color: #fea526;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 100;
+
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+.Send:hover {
+    background-color: #9c681f;
+}
