@@ -1,0 +1,38 @@
+$main-color: #092907;
+$second-color: rgba(182, 117, 33, 0.466);
+$text-color: #27410dc4;
+$bg-color: #cefcad;
+$box-shadow: 2px 2px 10px 4px #12430f;
+
+h3 {
+    margin-left: calc(50% - 90px);
+    margin-right: calc(50% - 90px);
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px;
+    border: solid 2px $main-color;
+    background-color: $second-color;
+    color: $main-color;
+}
+
+.form {
+    text-align: center;
+
+    input {
+        cursor: pointer;
+        background-color: $second-color;
+        color: black;
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 20px;
+        color: black;
+        background-color: rgba(182, 117, 33, 0.466);;
+        border-radius: 3px;
+        border: solid 2px rgba(146, 120, 86, 0.5);
+        cursor: pointer;
+    }
+}

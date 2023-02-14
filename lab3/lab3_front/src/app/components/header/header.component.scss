@@ -1,0 +1,41 @@
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../../../assets/img/boat.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.home_text h1 {
+    font-size: 3.4rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 3%;
+}
+
+.home_text p {
+    font-size: 1rem;
+    color: var(--main-color);
+    margin-left: 3%;
+}
+
+.btn {
+    margin-left: 10%;
+    padding: 10px 30px;
+    border-radius: 0.3em;
+    font-size: 1.4em;
+    font-weight: bold;
+    background: #43ace3;
+    color: #fff;
+    box-shadow: 0 3px 0 rgba(59, 154, 198, 1)
+}
+
+.btn:hover {
+    background: #0000009d;
+}
