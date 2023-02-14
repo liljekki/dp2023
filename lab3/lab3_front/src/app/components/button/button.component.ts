@@ -13,7 +13,7 @@ export class ButtonComponent {
 
   constructor(private service: Service1Service) { }
 
-  getEntities(): void {
+  ngOnInit(): void {
     this.service.getEntities().subscribe(
       (entities) => {
         this.entityList = entities;
@@ -22,3 +22,4 @@ export class ButtonComponent {
   }
 
 }
+
