@@ -1,0 +1,11 @@
+<div *ngIf="entity">
+
+    <h3>Update entity</h3>
+    <div class="form">
+        <input type="hidden" [(ngModel)]="entity.id">
+        <input type="text" [(ngModel)]="entity.name"><br><br>
+        <input type="text" [(ngModel)]="entity.description"><br><br>
+        <input type="text" [(ngModel)]="entity.img"><br><br>
+        <button (click)="updateEntities()">Update entitites</button>
+    </div>
+</div>

@@ -1,8 +1,11 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import Entity.MyEntity;
+import com.google.gson.Gson;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -10,9 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jdbc.Connect;
 import jdbc.SqlCRUD;
-import paint.paint;
 
 /**
  * Servlet implementation class Servlet1
@@ -20,97 +21,67 @@ import paint.paint;
 @WebServlet("/Servlet1/*")
 public class Servlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	LabCRUDInterface<paint> crud = new SqlCRUD();
-	
-		
+
+	LabCRUDInterface<MyEntity> crud = new SqlCRUD();
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub	
-		
-		crud = new SqlCRUD();
-		
-	}
-
-	/**
-	 * @see Servlet#destroy()
-	 */
-	public void destroy() {
 		// TODO Auto-generated method stub
-		try {
+
+		crud = new SqlCRUD();
+
+	}
+	public void destroy() {
+		try{
 			((SqlCRUD) crud).getConnection().close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-   
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		setAccessControlHeaders(response);
+		String mydata = new Gson().toJson(crud.read());
+		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
-//		System.out.println(((SqlCRUD) crud).getConnection());
-		response.getWriter().println(crud.read());
+		response.setCharacterEncoding("UTF-8");
+		out.print(mydata);
+		out.flush();
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		setAccessControlHeaders(response);
-		paint paint = Helpers.paintParse(request);
-		crud.create(paint);
+		MyEntity ent = Helpers.Parse(request);
+		response.setContentType("application/json");
+		crud.update(ent.getId(), ent);
 		doGet(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
-	
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		setAccessControlHeaders(response);
-		paint paint = Helpers.paintParse(request);
-		int cat = Integer.parseInt(request.getPathInfo().substring(1));
+		MyEntity watch = Helpers.Parse(request);
+		crud.create(watch);
+		doGet(request, response);
+
+	}
+
+	public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		setAccessControlHeaders(response);
+		int id = Integer.parseInt(request.getPathInfo().substring(1));
 		response.setContentType("application/json");
-		crud.update(cat, paint);
+		crud.delete(id);
 		doGet(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
-	 */
-	
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		setAccessControlHeaders(response);
-		int cat = Integer.parseInt(request.getPathInfo().substring(1));
-		
-		response.setContentType("application/json");
-		crud.delete(cat);
-		doGet(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doOptions(HttpServletRequest, HttpServletResponse)
-	 */
-	
+	@Override
 	protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		setAccessControlHeaders(response);
 		response.setStatus(HttpServletResponse.SC_OK);
-		
 	}
-	
-	 private void setAccessControlHeaders(HttpServletResponse resp) {
-		  resp.setHeader("Access-Control-Allow-Origin", "*");
-	      resp.setHeader("Access-Control-Allow-Methods", "*");
-	      resp.setHeader("Access-Control-Allow-Headers", "*");
-	  }
-	 }
+
+	private void setAccessControlHeaders(HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "*");
+		response.setHeader("Access-Control-Allow-Headers", "*");
+	}
+}

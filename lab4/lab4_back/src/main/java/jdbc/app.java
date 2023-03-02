@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import Entity.MyEntity;
 import servlet.LabCRUDInterface;
-import paint.paint;
 
 public class app {
 
@@ -18,11 +18,11 @@ public class app {
 		Connection connection = new Connect().getCon();
 
 
-		List<paint> list = new ArrayList<>();
+		List<MyEntity> list = new ArrayList<>();
 
-		try (Statement st = connection.createStatement(); ResultSet rs = st.executeQuery("SELECT * FROM paint;");) {
+		try (Statement st = connection.createStatement(); ResultSet rs = st.executeQuery("SELECT * FROM entity.entity;");) {
 			while (rs.next()) {
-				list.add(new paint(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4)));
+				list.add(new MyEntity(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4)));
 			}
 
 		} catch (SQLException e) {

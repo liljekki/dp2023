@@ -1,0 +1,8 @@
+servlet\Helpers.class
+jdbc\app.class
+servlet\LabCRUDInterface.class
+Entity\MyEntity.class
+jdbc\SqlCRUD.class
+Entity\Mock.class
+jdbc\Connect.class
+servlet\Servlet1.class

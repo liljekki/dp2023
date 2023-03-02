@@ -6,13 +6,13 @@ import java.sql.SQLException;
 
 public class Connect {
 
-	private String url = "jdbc:postgresql://localhost:5432/wd2022?user=student12&password=12345";
+	private String url = "jdbc:postgresql://localhost:5432/dp2023";
 	private Connection conn;
 
 	public Connect() {
 
 		try {
-			this.conn = DriverManager.getConnection(url);
+			this.conn = DriverManager.getConnection(url,"sample1", "111");
 		} catch (SQLException e) {
 
 			e.printStackTrace();

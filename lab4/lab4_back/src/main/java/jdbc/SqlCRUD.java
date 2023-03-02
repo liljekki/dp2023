@@ -8,14 +8,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Entity.MyEntity;
 import servlet.LabCRUDInterface;
-import paint.paint;
 
-public class SqlCRUD implements LabCRUDInterface<paint> {
+public class SqlCRUD implements LabCRUDInterface<MyEntity> {
 
-	
 	Connection connection;
-	
 	
 	public SqlCRUD() {
 		
@@ -33,28 +31,27 @@ public class SqlCRUD implements LabCRUDInterface<paint> {
 	}
 
 	@Override
-	public void create(paint t) {
-		// TODO Auto-generated method stub
-		try (PreparedStatement st = connection.prepareStatement("INSERT INTO paint (title,price,type) " + "VALUES (?,?,?)")) {
-			st.setString(1, t.getTitle());
-			st.setFloat(2, t.getPrice());
-			st.setString(3, t.getType());
+	public void create(MyEntity ent) {
+		try(
+				PreparedStatement st = connection.prepareStatement("INSERT INTO entity.entity (name, description, img) "
+						+ "VALUES (?, ?, ?);")){
+			st.setString(1, ent.getName());
+			st.setString(2, ent.getDescription());
+			st.setString(3, ent.getimg());
 			st.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
-	public List<paint> read() {
+	public List<MyEntity> read() {
 		// TODO Auto-generated method stub
-		List<paint> list = new ArrayList<>();
+		List<MyEntity> list = new ArrayList<>();
 
-		try (Statement st = connection.createStatement(); ResultSet rs = st.executeQuery("SELECT * FROM paint;");) {
+		try (Statement st = connection.createStatement(); ResultSet rs = st.executeQuery("SELECT * FROM entity.entity;");) {
 			while (rs.next()) {
-				list.add(new paint(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4)));
+				list.add(new MyEntity(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4)));
 			}
 
 		} catch (SQLException e) {
@@ -66,14 +63,14 @@ public class SqlCRUD implements LabCRUDInterface<paint> {
 	}
 
 	@Override
-	public void update(int cat, paint t) {
+	public void update(int id, MyEntity t) {
 		// TODO Auto-generated method stub
 		try (PreparedStatement st = connection
-				.prepareStatement("UPDATE paint " + "SET \"title\"=?, \"price\"=?, \"type\"=? WHERE cat=?;")) {
-			st.setString(1, t.getTitle());
-			st.setFloat(2, t.getPrice());
-			st.setString(3, t.getType());
-			st.setInt(4, cat);
+				.prepareStatement("UPDATE entity.entity " + "SET \"name\"=?, \"description\"=?, \"img\"=? WHERE id=?;")) {
+			st.setString(1, t.getName());
+			st.setString(2, t.getDescription());
+			st.setString(3, t.getimg());
+			st.setInt(4, id);
 			st.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -83,11 +80,11 @@ public class SqlCRUD implements LabCRUDInterface<paint> {
 	}
 
 	@Override
-	public void delete(int cat) {
+	public void delete(int id) {
 		// TODO Auto-generated method stub
 		try (PreparedStatement st = connection
-				.prepareStatement("DELETE FROM paint WHERE cat=?;")) {
-			st.setInt(1, cat);			
+				.prepareStatement("DELETE FROM entity.entity WHERE id=?;")) {
+			st.setInt(1, id);
 			st.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

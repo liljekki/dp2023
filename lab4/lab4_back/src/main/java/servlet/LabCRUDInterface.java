@@ -1,12 +1,14 @@
 package servlet;
 
+import Entity.MyEntity;
+
 import java.util.List;
 
 public interface LabCRUDInterface<T> {
 	
 	public void create(T t);
 	public List<T> read();
-	public void update(int cat, T t);
-	public void delete(int cat);	
+	public void update(int id, T t);
+	public void delete(int id);
 
 }

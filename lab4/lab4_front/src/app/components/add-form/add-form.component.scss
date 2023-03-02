@@ -1,0 +1,70 @@
+$main-color: #092907;
+$second-color: rgba(182, 117, 33, 0.466);
+$text-color: #27410dc4;
+$bg-color: #cefcad;
+$box-shadow: 2px 2px 10px 4px #12430f;
+
+h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+
+    .list {
+        display: inline-block;
+        text-align: left;
+        list-style: none;
+
+        li {
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        span {
+            padding-left: 3%;
+            padding-right: 3%;
+            font-size: 18px;
+            float: right;
+            margin-left: 30px;
+            cursor: pointer;
+            color: gray;
+            background-color: $second-color;
+            border-radius: 3px;
+            border: solid 2px $main-color;
+        }
+    }
+}
+
+h3 {
+    margin-left: calc(50% - 90px);
+    margin-right: calc(50% - 90px);
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px;
+    border: solid 2px $main-color;
+    background-color: $second-color;
+    color: $main-color;
+}
+
+form {
+    text-align: center;
+
+    input {
+        cursor: pointer;
+        background-color: $second-color;
+        color: black;
+        font-size: 20px;
+    }
+
+    input[type=submit] {
+        color: black;
+        background-color: $second-color;
+        border-radius: 3px;
+        border: solid 2px rgba(146, 120, 86, 0.5);
+    }
+}

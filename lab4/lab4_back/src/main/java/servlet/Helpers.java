@@ -4,13 +4,13 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
+import Entity.MyEntity;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
 import jakarta.servlet.http.HttpServletRequest;
-import paint.paint;
 
 public class Helpers {
 	
@@ -27,39 +27,39 @@ public class Helpers {
 		return jsonElement;
 	}
 	
-	public static paint paintParse(HttpServletRequest request) {
-		paint paint = new paint();
+	public static MyEntity Parse(HttpServletRequest request) {
+		MyEntity ent = new MyEntity();
 		JsonElement jsonElement = bodyParse(request);
-		paint.setCat(jsonElement.getAsJsonObject().get("cat").getAsInt());
-		paint.setTitle(jsonElement.getAsJsonObject().get("title").getAsString());
-		paint.setPrice(jsonElement.getAsJsonObject().get("price").getAsFloat());
-		paint.setType(jsonElement.getAsJsonObject().get("type").getAsString());
-		return paint;
+		ent.setId(jsonElement.getAsJsonObject().get("id").getAsInt());
+		ent.setName(jsonElement.getAsJsonObject().get("name").getAsString());
+		ent.setDescription(jsonElement.getAsJsonObject().get("description").getAsString());
+		ent.setimg(jsonElement.getAsJsonObject().get("img").getAsString());
+		return ent;
 	}
 	
 	
-	public static int getNextCat(List<paint> list) {
-		int maxCat = 0;
-		Iterator<paint> iterator = list.iterator();
+	public static int getNext(List<MyEntity> list) {
+		int maxId = 0;
+		Iterator<MyEntity> iterator = list.iterator();
 		while(iterator.hasNext()) {
-			int currentCat = iterator.next().getCat();
-			if(currentCat>maxCat) maxCat=currentCat;
+			int currentCat = iterator.next().getId();
+			if(currentCat>maxId) maxId=currentCat;
 		}
-		return maxCat+1;
+		return maxId+1;
 	}
 	
-	public static int getIndexByPaintCat(int cat,List<paint> list) {
-		int listCat = cat;
+	public static int getIndexById(int cat,List<MyEntity> list) {
+		int listId = cat;
 		
-		Iterator<paint> iterator = list.iterator();
+		Iterator<MyEntity> iterator = list.iterator();
 		while(iterator.hasNext()) {
-			paint temp =iterator.next();
-			if(temp.getCat()==listCat) { 
-				listCat=list.indexOf(temp);
+			MyEntity temp =iterator.next();
+			if(temp.getId()==listId) {
+				listId=list.indexOf(temp);
 				break;
 			}
 		}
-		return listCat;
+		return listId;
 	}
 
 }
