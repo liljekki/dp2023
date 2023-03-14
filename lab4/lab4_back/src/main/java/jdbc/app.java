@@ -53,12 +53,12 @@ public class app {
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
 
-            session.save(new MyEntity(3, "name3", "gg", "img_new"));
+            /*session.save(new MyEntity(3, "name3", "gg", "img_new"));
             session.save(new MyEntity(2, "name2", "5","1"));
 
             MyEntity updateEntity1 = new MyEntity(1, "updated_name_1", "update", "gg");
             session.update(updateEntity1);
-            session.delete(new MyEntity(2, "name2", "5","1"));
+            session.delete(new MyEntity(2, "name2", "5","1"));*/
 
 			entities = (List<MyEntity>) session.createQuery("from MyEntity").list();
 

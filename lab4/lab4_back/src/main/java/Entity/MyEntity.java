@@ -1,9 +1,14 @@
 package Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
+@Entity
+@Table(name="entity.entity")
 public class MyEntity implements Serializable {
-    public static final long serialVersionUID =1L;
+    @Id
     private int id;
     private String name;
     private String description;
