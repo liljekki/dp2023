@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <h1>Watches Manager</h1>
+
+  <a href="toadd" class="add">Add New Watch</a>
+
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>description</th>
+      <th>img</th>
+      <th>To Do</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entity : ${list}">
+      <td th:text="${entity.MyEntity.id}">Watch ID</td>
+      <td><img th:src="${entity.MyEntity.name}" width="150" height="150"/></td>
+      <td th:text="${entity.MyEntity.description}">Model</td>
+      <td th:text="${entity.MyEntity.img}">Price</td>
+      <td>
+        <a th:href="@{/update/{id}(id=${entity.MyEntity.id})}">Update</a>
+        <br/><br/>
+        <a th:href="@{/delete/{id}(id=${entity.MyEntity.id})}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
