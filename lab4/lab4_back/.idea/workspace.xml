@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b432d91-e1c2-4405-b3f1-a7dee251edd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Mock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entity/MyEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc/Connect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc/SqlCRUD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc/app.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/Helpers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/LabCRUDInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/Servlet1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/Connect.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +18,16 @@
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -50,7 +51,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/programme/java/dp2023/lab4/lab4_back/src/main/webapp",
+    "last_opened_file_path": "C:/programme/java/dp2023/lab4/lab4_back",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -63,7 +68,7 @@
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="adminPort" value="5555" />
-      <option name="contextPath" value="lection1-web2" />
+      <option name="contextPath" value="/lection1-web2" />
       <option name="docBase" value="C:\programme\java\dp2023\lab4\lab4_back\src\main\webapp" />
       <option name="envOptions">
         <map />
@@ -91,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679340512037</updated>
       <workItem from="1679340513145" duration="107000" />
+      <workItem from="1679341658797" duration="900000" />
     </task>
     <servers />
   </component>
