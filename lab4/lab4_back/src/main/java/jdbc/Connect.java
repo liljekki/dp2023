@@ -12,7 +12,7 @@ public class Connect {
 	public Connect() {
 
 		try {
-			this.conn = DriverManager.getConnection(url,"sample1", "111");
+			this.conn = DriverManager.getConnection(url,"sample", "111");
 		} catch (SQLException e) {
 
 			e.printStackTrace();

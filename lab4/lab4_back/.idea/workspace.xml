@@ -7,6 +7,7 @@
     <list default="true" id="7b432d91-e1c2-4405-b3f1-a7dee251edd3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jdbc/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbc/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc/Connect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc/Connect.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +47,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/programme/java/dp2023/lab4/lab4_back",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/programme/java/dp2023/lab4/lab4_back&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" nameIsGenerated="true">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
@@ -70,9 +71,6 @@
       <option name="adminPort" value="5555" />
       <option name="contextPath" value="/lection1-web2" />
       <option name="docBase" value="C:\programme\java\dp2023\lab4\lab4_back\src\main\webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="port" value="8800" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -97,6 +95,7 @@
       <updated>1679340512037</updated>
       <workItem from="1679340513145" duration="107000" />
       <workItem from="1679341658797" duration="900000" />
+      <workItem from="1679509174005" duration="79000" />
     </task>
     <servers />
   </component>
