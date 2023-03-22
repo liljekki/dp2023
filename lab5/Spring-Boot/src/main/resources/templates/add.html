@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Watch</title>
+  <link rel="stylesheet" th:href="@{/css/form.css}">
+</head>
+<body>
+<div>
+  <h1>Add New Watch</h1>
+  <br/>
+  <form action="#" th:action="@{/toadd}" th:object="${entity}" method="post">
+    <table>
+      <tr>
+        <td>Watch Look:</td>
+        <td><input type="text" th:field="*{name}"/></td>
+      </tr>
+      <tr>
+        <td>Watch Model:</td>
+        <td><input type="text" th:field="*{description}"/></td>
+      </tr>
+      <tr>
+        <td>Watch Price:</td>
+        <td><input type="text" th:field="*{img}"/></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Add</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

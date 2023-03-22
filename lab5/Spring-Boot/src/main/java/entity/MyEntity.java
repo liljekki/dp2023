@@ -14,15 +14,16 @@ public class MyEntity implements Serializable {
     private String description;
     private String img;
 
+
+
+    public MyEntity() {
+
+    }
     public MyEntity(int id, String name, String description, String img) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.img = img;
-    }
-
-    public MyEntity() {
-
     }
 
     public int getId() {

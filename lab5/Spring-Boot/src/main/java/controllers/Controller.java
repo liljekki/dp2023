@@ -31,7 +31,7 @@ public class Controller {
         MyEntity new_ent = new MyEntity();
         model.addAttribute("entity", new_ent);
 
-        return "added";
+        return "add";
     }
     @PostMapping("/toadd")
     public String saveWatch(@ModelAttribute("entity") MyEntity entity_x) {
@@ -43,7 +43,7 @@ public class Controller {
 
     @GetMapping("/update/{id}")
     public ModelAndView UpdateForm(@PathVariable(name = "id") int id){
-        ModelAndView mav = new ModelAndView("updated_ent");
+        ModelAndView mav = new ModelAndView("update");
         MyEntity new_ent = service.get(id);
         mav.addObject("entity", new_ent);
 
