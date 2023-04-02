@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+    <!--    <link rel="stylesheet" th:href="@{/css/index.css}">-->
+</head>
+<body>
+<div class="container">
+    <h1>Admin page</h1>
+    <a href="new" class="add">Create new</a>
+    <table cellpadding="20">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>To Do</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="element : ${listElement}">
+            <td th:text="${element.id}">ID</td>
+            <td th:text="${element.name}">name</td>
+            <td th:text="${element.description}">price</td>
+<!--            <td><img th:src="${element.img}" width="150" height="150"/></td>-->
+            <td><img th:src="${element.img}"</img></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${element.id})}">Update</a>
+                <br/><br/>
+                <a th:href="@{/delete/{id}(id=${element.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
