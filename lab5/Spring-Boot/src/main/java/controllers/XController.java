@@ -1,25 +1,28 @@
 package controllers;
 
+
 import entity.MyEntity;
+import org.springframework.stereotype.Controller;
+import services.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
-import services.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 import java.util.List;
 
-@org.springframework.stereotype.Controller
-public class Controller {
+@Controller
+public class XController {
     @Autowired
     private Service service;
 
     @GetMapping("/")
     public String HomePage(Model model){
-        List<MyEntity>list = service.listAll();
+        List<MyEntity> list = service.listAll();
         model.addAttribute("list", list);
 
         return "index";
