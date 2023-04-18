@@ -1,0 +1,18 @@
+package lab7.lab7.MyEntity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+@Entity
+@Data
+public class MyEntity {
+
+    @Id
+    @GeneratedValue
+    private long id;
+    private String name;
+    private String description;
+    private String img;
+}
