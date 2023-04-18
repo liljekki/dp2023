@@ -1,0 +1,10 @@
+<!-- <button class="button" (click)="getEntities()">Get Product</button> -->
+
+<ul>
+    <li *ngFor="let ent of entityList">
+        <div class="name">Name: {{ent.name}}</div>
+        <img src="{{ent.img}}" alt="">
+        <div class="descr">Description: {{ent.description}}</div>
+       
+    </li>
+</ul>
