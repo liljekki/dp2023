@@ -7,65 +7,57 @@ import { Service1Service } from 'src/app/services/service1.service';
   templateUrl: './add-form.component.html',
   styleUrls: ['./add-form.component.scss']
 })
-export class AddFormComponent implements OnInit{
+export class AddFormComponent  implements OnInit {
 
-  title:string="Our Products:";
-  entitityList:Entity[]=[];
+  title:string="List";
+  elemList:Entity[]=[];
   showAddForm:boolean=false;
-  selectedEntity?:Entity;
+  selectedElem?:Entity;
 
-  constructor(private service:Service1Service) {}
+
+  constructor(private service:Service1Service){}
 
   ngOnInit(): void{
-    this.updateEntities();
+    this.updateElem();
     this.service.list.subscribe(
-      (list:Entity[])=>{this.entitityList=list}
+      (list:Entity[])=>{this.elemList=list}
     );
   }
-
-  updateEntities_2(){
+  updateElem() {
     this.service.getEntities().subscribe(
-      (entities)=>{
-        // this.service.setList(entities);
-        this.entitityList = entities._embedded.entities;
+      (elements)=>{
+        this.elemList = elements._embedded.entities;
       }
     );
+    
   }
-  updateEntities() {
-    this.service.getEntities().subscribe(
-      (entities) => {
-        this.entitityList = entities._embedded.entities;
+  addElem(elem:Entity){
+    this.service.postEntities(elem).subscribe(
+      (elements)=>{
+        this.updateElem();
       }
     );
+   
   }
-
-  addEntities(entity:Entity){
-    this.service.postEntities(entity).subscribe(
-      (entities)=>{
-        this.updateEntities();
-      }
-    );
-    // this.refreshPage();
-  }
-
-  onSelect(entity:Entity){
-    if(this.selectedEntity && entity.id==this.selectedEntity.id){
-      this.selectedEntity=undefined;
-    } else{
-      this.selectedEntity=entity;
+  onSelect(elem:Entity){
+    if (this.selectedElem && elem.id==this.selectedElem.id){
+      this.selectedElem=undefined;
+    }
+    else{
+      this.selectedElem=elem;
     }
   }
-
-  deleteEntities(entity:Entity){
-    this.service.deleteEntities(entity).subscribe(
+  deleteElem(elem:Entity){
+    this.service.deleteEntities(elem).subscribe(
       ()=>{
-        this.updateEntities();
+        this.updateElem();
       }
     );
-    // this.refreshPage();
+    
   }
 
-  // refreshPage(): void{
-      //window.location.reload();
-  // }
+  refreshPage(): void{
+    window.location.reload();
+  }
+
 }

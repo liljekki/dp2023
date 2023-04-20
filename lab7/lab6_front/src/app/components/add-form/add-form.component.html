@@ -1,20 +1,38 @@
-<h2>{{title}}</h2>
-<div class="container">
-    <ul class="list">
-        <li *ngFor="let u of entitityList" (click)="onSelect(u)">
-            {{u.id}}. {{u.name}}. {{u.description}}. {{u.img}}
-            <span (click)="deleteEntities(u)">delete</span>
+<section class="elem">
+
+    <ul>
+        <li *ngFor="let u of elemList" (click)="onSelect(u)">
+            {{u.id}}. {{u.img}}. {{u.description}}. {{u.name}}
+            <span (click)="deleteElem(u)">delete</span>
         </li>
     </ul>
-</div>
 
-<h3 (click)="showAddForm=!showAddForm">Add product</h3>
-<form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addEntities(form1.value)">
-    <input type="hidden" name="id" ngModel="-1">
-    <input type="text" name="name" ngModel placeholder="name"><br><br>
-    <input type="text" name="description" ngModel placeholder="description"><br><br>
-    <input type="text" name="img" ngModel placeholder="img"><br><br>
-    <input type="submit" value="Add entity">
-</form>
+    <h3 (click)="showAddForm=!showAddForm">ADD ELEMENT</h3>
+    <form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addElem(form1.value)">
+        <input type="hidden" name="id" ngModel="-1">
+        <div class="form-control">
+            <div class="form-control"></div>
+            <input type="text" name="images" ngModel>
+            <label><span style="transition-delay:0ms">I</span><span style="transition-delay:50ms">m</span><span
+                    style="transition-delay:100ms">a</span><span style="transition-delay:150ms">g</span><span
+                    style="transition-delay:200ms">e</span></label>
+        </div>
+        <div class="form-control">
+            <input type="number" name="price" ngModel>
+            <label><span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">r</span><span
+                    style="transition-delay:100ms">i</span><span style="transition-delay:150ms">c</span><span
+                    style="transition-delay:200ms">e</span></label>
+        </div>
 
-<app-update [entity]="selectedEntity" (updated)="updateEntities()"></app-update>
+        <div class="form-control">
+            <input type="text" name="name" ngModel>
+            <label><span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">a</span><span
+                    style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span></label>
+        </div>
+
+        <input class="button" type="submit" value="Add">
+    </form>
+
+    <app-update [entity]="selectedElem" (updated)="updateElem()"></app-update>
+
+</section>

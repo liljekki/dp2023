@@ -1,8 +1,18 @@
-<ul>
-    <li *ngFor="let ent of entityList">
-        <div class="name">Name: {{ent.name}}</div>
-        <img src="{{ent.img}}" alt="">
-        <div class="descr">Description: {{ent.description}}</div>
+<section class="products" id="products">
+    <div class="heading">
+        <h2>We collect on</h2>
+    </div>
 
-    </li>
-</ul>
+    <div class="products_container">
+        <div class="box" *ngFor="let ent of entityList">
+            <ul>
+                <li>
+                    <img src="{{ent.img}}" alt="">
+                    <h4>{{ent.description}}</h4>
+                    <h3>{{ent.name}}</h3>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
