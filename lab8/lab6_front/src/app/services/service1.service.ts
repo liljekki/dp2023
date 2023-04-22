@@ -8,12 +8,12 @@ import { Entity } from '../interfaces/entity';
 })
 export class Service1Service {
   list = new BehaviorSubject<Entity[]>([])
-url:string="http://localhost:1155/lab6/api/my_entity"
+url:string="http://localhost:1155/api/things"
 
   constructor(private http:HttpClient) { }
 
   getEntities():Observable<Entity[]>{
-    return this.http.get<Entity[]>(this.url + "/retrieve");
+    return this.http.get<Entity[]>(this.url + "/get");
   }
   postEntities(entity:Entity):Observable<Entity[]>{
     return this.http.post<Entity[]>(this.url + '/create', entity);
