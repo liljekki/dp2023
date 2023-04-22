@@ -1,0 +1,27 @@
+<form class="edit-form">
+    <div class="small_fields">
+        <div class="group">
+            <input type="text" #box (keyup)="getName(box.value)" name="name" required class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Change Name</label>
+        </div>
+        <div class="group">
+            <input type="text" #desc (keyup)="getDescription(desc.value)" name="description" required class="input">
+            <label>Change Description</label>
+        </div>
+        <div class="group">
+            <input type="text" #img (keyup)="getImg(img.value)" name="img" required class="input">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Change Img</label>
+        </div>
+    </div>
+    <div class="images">
+    <p>assets/img/spalnik.png</p>
+    <p>assets/img/spalnik2.png</p>
+    <p>assets/img/spalnik3.png</p>
+    </div>
+</form>
+
+<button (click)="OnClick()" class="Send">Edit</button>
